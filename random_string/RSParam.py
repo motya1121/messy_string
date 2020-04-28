@@ -45,3 +45,21 @@ RSP_ID = {
     'length': 8,
     'number': 1
 }
+
+
+def get_param(RSP_type: str):
+    if RSP_type == 'RSP_PW_LOW':
+        return RSP_PW_LOW
+    elif RSP_type == 'RSP_PW_MIDDLE':
+        return RSP_PW_MIDDLE
+    elif RSP_type == 'RSP_PW_HIGH':
+        return RSP_PW_HIGH
+    elif RSP_type == 'RSP_ID':
+        return RSP_ID
+    else:
+        from . import RSError
+        raise RSError.ParamFormatError('パラメータ名が存在しません')
+
+
+def get_param_list():
+    return ['RSP_PW_LOW', 'RSP_PW_MIDDLE', 'RSP_PW_HIGH', 'RSP_ID']

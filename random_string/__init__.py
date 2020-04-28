@@ -18,6 +18,9 @@ def main():
 
     parser.add_argument('-l', '--length', help='長さ', type=int, default=16)
     parser.add_argument('-n', '--number', help='出力する個数', type=int, default=1)
+
+    parser.add_argument('-P', '--parameter', help='パラメータを指定', type=str)
+    parser.add_argument('-Pl', '--parameter_list', help='利用できるパラメータの種類', action='store_true')
     args = parser.parse_args()
 
     parameter = {
@@ -32,6 +35,14 @@ def main():
         'number': 1
     }
 
+    if args.parameter is not None:
+        parameter = RSParam.get_param(args.parameter)
+    if args.parameter_list is True:
+        for param in RSParam.get_param_list():
+            print("パラメータ名: {}".format(param))
+            print("\t{}".format(RSParam.get_param(param)))
+        return
+
     if args.hex is True:
         parameter['string_type']['hex'] = True
     if args.decimal is True:
@@ -40,7 +51,7 @@ def main():
         parameter['string_type']['character'] = True
     if args.symbol is True:
         parameter['string_type']['symbol'] = True
-    if args.hex is False and args.decimal is False and args.character is False and args.symbol is False:
+    if args.hex is False and args.decimal is False and args.character is False and args.symbol is False and args.parameter is None:
         parameter['string_type']['hex'] = True
 
     if args.lowercase is True:
