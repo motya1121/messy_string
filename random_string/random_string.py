@@ -17,7 +17,8 @@ BASE_FORMAT = {
         'hex': bool,
         'decimal': bool,
         'character': bool,
-        'symbol': bool
+        'symbol': bool,
+        'options': str
     },
     'option': str,
     'length': int,
@@ -51,6 +52,9 @@ def base_string(param: dict):
         strings += SYMBOL
     if st_type['decimal'] is True:
         strings += DECIMAL
+
+    if st_type['options'] != '':
+        strings += st_type['options']
 
     return strings
 

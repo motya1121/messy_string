@@ -11,6 +11,7 @@ def main():
     parser.add_argument('-d', '--decimal', help='数値を使用する', action='store_true')
     parser.add_argument('-c', '--character', help='文字列を使用する', action='store_true')
     parser.add_argument('-s', '--symbol', help='記号を使用する', action='store_true')
+    parser.add_argument('-o', '--options', help='任意の文字列')
 
     parser.add_argument('-lo', '--lowercase', help='小文字にする(default)', action='store_true')
     parser.add_argument('-up', '--uppercase', help='大文字にする', action='store_true')
@@ -28,7 +29,8 @@ def main():
             'hex': False,
             'decimal': False,
             'character': False,
-            'symbol': False
+            'symbol': False,
+            'options': ''
         },
         'option': 'lowercase',
         'length': 16,
@@ -53,6 +55,8 @@ def main():
         parameter['string_type']['symbol'] = True
     if args.hex is False and args.decimal is False and args.character is False and args.symbol is False and args.parameter is None:
         parameter['string_type']['hex'] = True
+    if args.options is not None:
+        parameter['string_type']['options'] = args.options
 
     if args.lowercase is True:
         parameter['option'] = 'lowercase'
