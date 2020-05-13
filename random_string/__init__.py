@@ -55,7 +55,7 @@ def main():
         parameter['string_type']['symbol'] = True
     if args.hex is False and args.decimal is False and args.character is False and args.symbol is False and args.parameter is None:
         parameter['string_type']['hex'] = True
-    if args.options != '':
+    if args.options is not None:
         parameter['string_type']['options'] = args.options
 
     if args.lowercase is True:
