@@ -5,7 +5,7 @@
 ## インストール
 
 ```
-pip install git+https://github.com/motya1121/random_string
+pip install git+https://github.com/motya1121/messy_string
 ```
 
 ## 概要
@@ -45,8 +45,8 @@ pip install git+https://github.com/motya1121/random_string
 ### コマンドラインから
 
 ```
-$ random_string -h
-usage: random_string [-h] [--hex] [-d] [-c] [-s] [-o OPTIONS] [-lo] [-up]
+$ messy_string -h
+usage: messy_string [-h] [--hex] [-d] [-c] [-s] [-o OPTIONS] [-lo] [-up]
                      [-lu] [-l LENGTH] [-n NUMBER] [-P PARAMETER] [-Pl]
 
 radioの管理を行うプログラム
@@ -80,12 +80,12 @@ optional arguments:
 ### モジュールとしてインポート
 
 ```
-import random_string
+import messy_string
 
-print(random_string.RSParam.get_param_list())   # パラメータテンプレートを表示
-print(random_string.RSParam.RSP_ID)             # RSP_IDパラメータの詳細を表示
-print(random_string.random_string(random_string.RSParam.RSP_ID)) # RSP_IDパラメータを使用してランダム文字列を生成
+print(messy_string.RSParam.get_param_list())   # パラメータテンプレートを表示
+print(messy_string.RSParam.RSP_ID)             # RSP_IDパラメータの詳細を表示
+print(messy_string.messy_string(messy_string.RSParam.RSP_ID)) # RSP_IDパラメータを使用してランダム文字列を生成
 ```
 
-`random_string.random_string()`メソッドにパラメータを渡すことでランダムな文字列を作成できる．
+`messy_string.messy_string()`メソッドにパラメータを渡すことでランダムな文字列を作成できる．
 なお，内蔵パラメータは`RSParam`で定義されている．

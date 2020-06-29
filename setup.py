@@ -9,13 +9,13 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name="random_string",  # これがパッケージ名になります～
-    packages=['random_string'],  # moduleが入っているパッケージを選択してください～
+    name="messy_string",  # これがパッケージ名になります～
+    packages=['messy_string'],  # moduleが入っているパッケージを選択してください～
     version="0.2.0",
     license='MIT',
     author='motya0414',  # パッケージ作者の名前
     author_email='motya0414@hotmail.co.jp',  # パッケージ作者の連絡先メールアドレス
-    url='https://github.com/motya1121/random_string',
+    url='https://github.com/motya1121/messy_string',
     description='A tool to generate random character strings based on parameters',
     long_description=long_description,  # PyPIに'Project description'として表示されるパッケージの説明文
     long_description_content_type='text/markdown',
@@ -25,6 +25,6 @@ setup(
         'Programming Language :: Python :: 3.6'
     ],
     entry_points={
-        'console_scripts': ['random_string = random_string:main'],
+        'console_scripts': ['messy_string = messy_string:main'],
     },
 )
