@@ -99,7 +99,7 @@ def param_val_check(param: dict):
         raise RSError.ParamValError("生成数の値が正しくありません")
 
 
-def random_string(parameter: dict):
+def messy_string(parameter: dict):
     param_format_check(param=parameter, base_param=BASE_FORMAT)
     param_val_check(param=parameter)
     strings = base_string(param=parameter)

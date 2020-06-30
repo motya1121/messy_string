@@ -1,11 +1,11 @@
-from .random_string import random_string
+from .messy_string import messy_string
 from . import RSParam
 from . import RSError
 import argparse
 
 
 def main():
-    parser = argparse.ArgumentParser(description='radioの管理を行うプログラム')
+    parser = argparse.ArgumentParser(description='ランダムな文字列を生成するプログラム')
     parser.add_argument('--hex', help='16進数(default)', action='store_true')
 
     parser.add_argument('-d', '--decimal', help='数値を使用する', action='store_true')
@@ -70,7 +70,7 @@ def main():
     if 1 <= args.number and isinstance(args.number, int):
         parameter['number'] = args.number
 
-    strs = random_string(parameter)
+    strs = messy_string(parameter)
     for s in strs:
         print(s)
 
