@@ -1,4 +1,4 @@
-# random string
+# messy string
 
 ランダムな文字列を生成するツール
 
