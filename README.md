@@ -5,7 +5,7 @@
 ## インストール
 
 ```
-pip install git+https://github.com/motya1121/messy_string
+pip install messy-string
 ```
 
 ## 概要
