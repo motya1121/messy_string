@@ -11,7 +11,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name="messy_string",  # これがパッケージ名になります～
     packages=['messy_string'],  # moduleが入っているパッケージを選択してください～
-    version="0.2.0",
+    version="0.2.2",
     license='MIT',
     author='motya0414',  # パッケージ作者の名前
     author_email='motya0414@hotmail.co.jp',  # パッケージ作者の連絡先メールアドレス
